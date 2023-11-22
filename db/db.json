@@ -22,5 +22,57 @@
         "senha": "peitos"
       }
     ]
+  },
+  "veiculos": {
+    "veiculo": [
+      {
+        "id": 1,
+        "rota": "Praça",
+        "descricao": "vai pra praça",
+        "placa": "IDW932",
+        "assento": 30
+      },
+      {
+        "id": 2,
+        "rota": "centro",
+        "descricao": "vai pro centro",
+        "placa": "AHD837",
+        "assento": 30
+      }
+    ]
+  },
+  "rotas": {
+    "rota": [
+      {
+        "id": 1,
+        "transportadora": "centro",
+        "descricao": "vai pro centro",
+        "localPartida": "agora",
+        "destino": "Centro",
+        "saida": "12:45",
+        "chegada": "13:00"
+      },
+      {
+        "id": 2,
+        "transportadora": "Praça",
+        "descricao": "vai pra praça",
+        "localPartida": "aqui",
+        "destino": "pra la",
+        "saida": "10:30",
+        "chegada": "10:45"
+      }
+    ]
+  },
+  "transportadora": {
+    "rota": [
+      {
+        "id": 1,
+        "nome": "umutrans",
+        "endereco": "rua cavalo",
+        "telefone": 44932131312,
+        "email": "umutrans@gmail.com",
+        "sitio": "sim"
+      }
+    ]
   }
 }
