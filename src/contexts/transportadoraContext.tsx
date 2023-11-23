@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, ReactNode, createContext } from "react";
+import { useEffect, ReactNode, createContext, useState } from "react";
 
 
 interface ITransportadora {
@@ -12,7 +12,7 @@ interface ITransportadora {
 }
 
 interface PropsTransportadoraContext {
-  transportadora:Array<ITransportadora>
+  transportadoras: Array<ITransportadora>
 }
 export const TransportadoraContext = createContext(
   {} as PropsTransportadoraContext
@@ -25,20 +25,24 @@ interface PropstransportadoraProvider {
   children: ReactNode
 }
 
-export function transportadoraProvider({ children }: PropstransportadoraProvider) {
+export function TransportadoraProvider({ children }: PropstransportadoraProvider) {
+
+  const [transportadoras, setTransportadoras] = useState([])
+
 
   useEffect(() => {
     console.log("caiu aq")
-    var teste = axios.get("http://localhost:3000/transportadora").then((res) => {
-      console.log(teste)
+    axios.get("http://localhost:3000/transportadoras").then((res) => {
       console.log(res.data)
+      setTransportadoras(res.data.transportadoras)
+
     })
 
   })
 
   return (
     <TransportadoraContext.Provider value={{
-      transportadora,
+      transportadoras,
     }}>
       {children}
     </TransportadoraContext.Provider>

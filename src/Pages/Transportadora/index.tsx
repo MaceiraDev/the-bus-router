@@ -1,12 +1,17 @@
 import { useContext } from 'react';
-import { TransportadoraContext } from './../../contexts/transportadoraContext'
-
+import { TransportadoraContext, TransportadoraProvider } from './../../contexts/transportadoraContext'
 export const Transportadora = () => {
+
+  const { transportadoras } = useContext(TransportadoraContext)
   const context = useContext(TransportadoraContext);
-  console.log("ss")
+
+  console.log(transportadoras)
+
   return (
     <>
-      <h1>Transportadora aqui</h1>
+      <TransportadoraProvider>
+        <h1>Transportadora aqui</h1>
+      </TransportadoraProvider>
     </>
   )
 }

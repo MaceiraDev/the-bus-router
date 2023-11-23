@@ -63,8 +63,8 @@
       }
     ]
   },
-  "transportadora": {
-    "rota": [
+  "transportadoras": {
+    "transportadora": [
       {
         "id": 1,
         "nome": "umutrans",
