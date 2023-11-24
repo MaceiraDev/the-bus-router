@@ -1,15 +1,7 @@
 import axios from "axios";
 import { useEffect, ReactNode, createContext, useState } from "react";
+import { ITransportadora } from "../interfaces/interfaces";
 
-
-interface ITransportadora {
-  id: number;
-  nome: string;
-  endereco: string;
-  telefone: number;
-  email: string;
-  sitio: string;
-}
 
 interface PropsTransportadoraContext {
   transportadoras: Array<ITransportadora>
@@ -17,8 +9,6 @@ interface PropsTransportadoraContext {
 export const TransportadoraContext = createContext(
   {} as PropsTransportadoraContext
 )
-
-
 
 
 interface PropstransportadoraProvider {
@@ -31,17 +21,11 @@ export function TransportadoraProvider({ children }: PropstransportadoraProvider
 
 
   useEffect(() => {
-    console.log("caiu aq")
     axios.get("http://localhost:3000/transportadoras").then((res) => {
-      // console.log(res.data.transportadora)
       const data = res.data.transportadora
-      // console.table(data)
       setTransportadoras(data)
-      // console.log("***********")
-      // console.log(transportadoras)
     })
-
-  },[])
+  }, [])
 
 
   return (

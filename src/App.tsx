@@ -5,16 +5,19 @@ import { Header } from "./components/Header"
 import { GloblaStyle } from "./style/global"
 import { Footer } from "./components/Footer"
 import { TransportadoraProvider } from "./contexts/transportadoraContext"
+import { RotaProvider } from "./contexts/rotaContext"
 
 function App() {
 
   return (
     <>
       <TransportadoraProvider>
+      <RotaProvider>
         <Header />
         <GloblaStyle />
         <Outlet />
         <Footer />
+        </RotaProvider>
       </TransportadoraProvider>
     </>
   )

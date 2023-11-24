@@ -45,7 +45,7 @@
     "rota": [
       {
         "id": 1,
-        "transportadora": 1,
+        "transportadora": "centro",
         "descricao": "vai pro centro",
         "localPartida": "agora",
         "destino": "Centro",
@@ -54,7 +54,7 @@
       },
       {
         "id": 2,
-        "transportadora": 1,
+        "transportadora": "Praça",
         "descricao": "vai pra praça",
         "localPartida": "aqui",
         "destino": "pra la",

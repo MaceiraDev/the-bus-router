@@ -6,14 +6,10 @@ export const Transportadora = () => {
 
   const { transportadoras } = useContext(TransportadoraContext)
   const context = useContext(TransportadoraContext);
-  for (let index = 0; index < transportadoras.length; index++) {
-    const element = transportadoras[index];
-    console.log(element.nome)
 
-  }
   return (
     <>
-      <div className='conttainer'>
+      <div className='container'>
         <h2>Transportadora aqui</h2>
         <div className='row'>
           <div className='col-md-10 offset-md-1'>
