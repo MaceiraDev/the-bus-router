@@ -33,12 +33,16 @@ export function TransportadoraProvider({ children }: PropstransportadoraProvider
   useEffect(() => {
     console.log("caiu aq")
     axios.get("http://localhost:3000/transportadoras").then((res) => {
-      console.log(res.data)
-      setTransportadoras(res.data.transportadoras)
-
+      // console.log(res.data.transportadora)
+      const data = res.data.transportadora
+      // console.table(data)
+      setTransportadoras(data)
+      // console.log("***********")
+      // console.log(transportadoras)
     })
 
-  })
+  },[])
+
 
   return (
     <TransportadoraContext.Provider value={{

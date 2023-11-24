@@ -1,17 +1,35 @@
 import { useContext } from 'react';
-import { TransportadoraContext, TransportadoraProvider } from './../../contexts/transportadoraContext'
+
+import { TransportadoraContext } from './../../contexts/transportadoraContext'
+import { Table } from '../../components/Table';
 export const Transportadora = () => {
 
   const { transportadoras } = useContext(TransportadoraContext)
   const context = useContext(TransportadoraContext);
+  for (let index = 0; index < transportadoras.length; index++) {
+    const element = transportadoras[index];
+    console.log(element.nome)
 
-  console.log(transportadoras)
-
+  }
   return (
     <>
-      <TransportadoraProvider>
-        <h1>Transportadora aqui</h1>
-      </TransportadoraProvider>
+      <div className='conttainer'>
+        <h2>Transportadora aqui</h2>
+        <div className='row'>
+          <div className='col-md-10 offset-md-1'>
+            {transportadoras.map((transportadora) => {
+              return (
+                <Table id={transportadora.id} nome={transportadora.nome}
+                  endereco={transportadora.endereco}
+                  telefone={transportadora.telefone}
+                  email={transportadora.email}
+                  sitio={transportadora.sitio}
+                />
+              )
+            })}
+          </div>
+        </div>
+      </div>
     </>
   )
 }
