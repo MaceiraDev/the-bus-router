@@ -13,7 +13,7 @@ export interface ITransportadora {
   id: number;
   nome: string;
   endereco: string;
-  telefone: number;
+  telefone: string;
   email: string;
   sitio: string;
 }

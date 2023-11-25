@@ -1,6 +1,7 @@
 import { Container } from "./style"
 import { useContext } from 'react';
-import { TransportadoraContext } from './../../contexts/transportadoraContext'
+import { TransportadoraContext } from '../../contexts/transportadoraContext';
+
 
 export interface ITransportadora {
   id: number;

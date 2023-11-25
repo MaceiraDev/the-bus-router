@@ -1,6 +1,5 @@
 import { TableTrans } from '../../components/TableTransportadora';
 import { Container } from './style';
-
 export const Transportadora = () => {
 
   return (

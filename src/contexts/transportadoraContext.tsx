@@ -32,7 +32,7 @@ export function TransportadoraProvider({ children }: PropstransportadoraProvider
 
   async function createTransportadora(data: ITransportadora) {
     const resposta = await axios.post('http://localhost:3000/transportadoras', data)
-    axios.get('/api/tarefas')//5min
+    axios.get('http://localhost:3000/transportadoras')//5min
       .then((res) => {
         const data = res.data
         setTransportadoras(data)
