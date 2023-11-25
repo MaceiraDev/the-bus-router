@@ -20,7 +20,7 @@ export function RotaProvider({ children }: PropsrotaProvider) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get("http://localhost:3000/rotas");
-      const data = response.data.rota;
+      const data = response.data;
       setRotas(data);
     };
 
