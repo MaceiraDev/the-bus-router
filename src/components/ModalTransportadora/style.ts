@@ -8,13 +8,13 @@ h2 {
 }
 
 input {
-  width: 96%;
+  width: 100%;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #d7d7d7;
   background-color: #e7e9ee;
   font-size: 1rem;
-
+  margin-bottom: 10px;
   &::placeholder {
       color: var(--text-body);
   }
@@ -46,7 +46,7 @@ select {
 button[type='submit'] {
   width: 100%;
   padding: 10px;
-  background-color: blue;
+  background-color: green;
   color: #fff;
   border-radius: 8px;
   border: 0;

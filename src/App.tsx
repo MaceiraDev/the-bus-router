@@ -7,19 +7,35 @@ import { Footer } from "./components/Footer"
 import { TransportadoraProvider } from "./contexts/transportadoraContext"
 import { RotaProvider } from "./contexts/rotaContext"
 import { Carrousel } from "./components/Carrousel"
+import { ModalTransportadora } from "./components/ModalTransportadora"
+import { useState } from "react"
 
 function App() {
+  const [isVisibleModal, setIsVisibleModal] = useState(false)
+
+  function abrirModalTrans() {
+    setIsVisibleModal(true)
+  }
+
+  function fecharModal() {
+    setIsVisibleModal(false)
+  }
+
 
   return (
     <>
       <TransportadoraProvider>
         <RotaProvider>
-          <Header />
+          <Header abrirModalTrans={abrirModalTrans} />
           <Carrousel />
           <GloblaStyle />
           <Outlet />
           <Footer />
         </RotaProvider>
+        <ModalTransportadora
+          modalVisible={isVisibleModal}
+          fecharModal={fecharModal}
+        />
       </TransportadoraProvider>
     </>
   )

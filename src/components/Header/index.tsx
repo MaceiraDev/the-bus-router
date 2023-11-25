@@ -1,5 +1,9 @@
 import { Container } from "./style"
-export const Header = () => {
+
+interface PropsHeader {
+  abrirModalTrans: () => void;
+}
+export const Header = (props: PropsHeader) => {
   return (
     <>
       <Container>
@@ -17,7 +21,16 @@ export const Header = () => {
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="/rota">Rotas</a>
                 </li>
+
               </ul>
+            </div>
+            <div>
+              <button
+                type="button"
+                className="btn-add-trans"
+                onClick={props.abrirModalTrans}>
+                Cadastrar Transportadora
+              </button>
             </div>
           </div>
         </nav>

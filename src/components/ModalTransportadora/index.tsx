@@ -41,6 +41,8 @@ export function ModalTransportadora(props: PropsModal) {
       id: 0
     })
 
+    limparCamposEFecharModal()
+
   }
 
   return (
@@ -62,29 +64,37 @@ export function ModalTransportadora(props: PropsModal) {
           placeholder='Nome:'
           required
           value={nome}
+          onChange={(event => setNome(event.target.value))}
         />
         <input
           type="text"
           placeholder='Endereço:'
           required
           value={endereco}
+          onChange={(event => setEndereco(event.target.value))}
+
         />
         <input
           type="text"
           placeholder='Telefone'
           required
           value={telefone}
+          onChange={(event => setTelefone(event.target.value))}
         />
         <input
           type="email"
           placeholder='E-mail:'
           required
           value={email}
+          onChange={(event => setEmail(event.target.value))}
         />
-        <select value={sitio}>
-          <option value="Sim">Sim</option>
-          <option value="Não">Não</option>
-        </select>
+        <input
+          type="text"
+          placeholder='sitio:'
+          required
+          value={sitio}
+          onChange={(event => setSitio(event.target.value))}
+        />
         <button type='submit'>
           Cadastrar
         </button>
