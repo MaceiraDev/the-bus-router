@@ -9,4 +9,14 @@ nav{
 i{
   font-size: 25pt;
 }
+a{
+  color: #000;
+  font-size: 16pt;
+  font-weight: 500;
+}
+a:hover{
+  color: #fff !important;
+  font-size: 16pt;
+  font-weight: 500;
+}
 `
