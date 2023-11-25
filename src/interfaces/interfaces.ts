@@ -1,7 +1,7 @@
 
 export interface IRotas {
   id: number;
-  transportadora: string;
+  transportadora: number;
   descricao: string;
   localPartida: string;
   destino: string;

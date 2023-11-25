@@ -1,8 +1,10 @@
-import { Container } from "./style"
+import { useContext } from 'react';
+import { RotaContext } from "../../contexts/rotaContext";
+import { Container } from './style';
 
 interface ItableProps {
   id: number;
-  transportadora: string;
+  transportadora: number;
   descricao: string;
   localPartida: string;
   destino: string;
@@ -10,22 +12,38 @@ interface ItableProps {
   chegada: string;
 }
 
-export const Table = ({ id, transportadora, descricao, localPartida, destino, saida, chegada }: ItableProps) => {
+export const TableRota = ({ }: ItableProps) => {
+
+  const { rotas } = useContext(RotaContext)
+  const context = useContext(RotaContext);
+
   return (
     <>
       <Container>
         <table className="table table-hover">
-          <tbody className="mid-tabela">
+          <thead className="top-tabela">
             <tr>
-              <td> {id} </td>
-              <td> {transportadora} </td>
-              <td> {descricao} </td>
-              <td> {localPartida} </td>
-              <td> {destino} </td>
-              <td> {saida} </td>
-              <td> {chegada} </td>
-
+              <th scope="col">Código</th>
+              <th scope="col">Transportadora</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">local de Partida</th>
+              <th scope="col">Destino</th>
+              <th scope="col">Saída</th>
+              <th scope="col">Chegada</th>
             </tr>
+          </thead>
+          <tbody className="mid-tabela">
+            {rotas.map((rota) =>
+              <tr key={rota.id}>
+                <td> {rota.id} </td>
+                <td> {rota.transportadora} </td>
+                <td> {rota.descricao} </td>
+                <td> {rota.localPartida} </td>
+                <td> {rota.descricao} </td>
+                <td> {rota.saida} </td>
+                <td> {rota.chegada} </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </Container>

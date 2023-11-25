@@ -17,9 +17,6 @@ export const Header = () => {
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="/rota">Rota</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
               </ul>
             </div>
           </div>

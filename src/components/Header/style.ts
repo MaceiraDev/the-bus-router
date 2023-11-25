@@ -7,6 +7,6 @@ nav{
   border-bottom: solid 5px var(--backgroundDois);
 }
 i{
-  font-size: 24pt;
+  font-size: 25pt;
 }
 `

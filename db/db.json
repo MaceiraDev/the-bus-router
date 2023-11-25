@@ -46,8 +46,8 @@
       {
         "id": 1,
         "transportadora": 1,
-        "descricao": "vai pro centro",
-        "localPartida": "agora",
+        "descricao": "Destino ao Centro",
+        "localPartida": "Praça Nossa Senhora",
         "destino": "Centro",
         "saida": "12:45",
         "chegada": "13:00"
@@ -55,9 +55,9 @@
       {
         "id": 2,
         "transportadora": 1,
-        "descricao": "vai pra praça",
-        "localPartida": "aqui",
-        "destino": "pra la",
+        "descricao": "Destino ao Polo Téc",
+        "localPartida": "Ponto V do Shopping",
+        "destino": "Polo Tecnológico",
         "saida": "10:30",
         "chegada": "10:45"
       }
@@ -67,10 +67,18 @@
     "transportadora": [
       {
         "id": 1,
-        "nome": "umutrans",
-        "endereco": "rua cavalo",
+        "nome": "UMUTRANS",
+        "endereco": "Rua São Mateus",
         "telefone": 44932131312,
         "email": "umutrans@gmail.com",
+        "sitio": "sim"
+      },
+      {
+        "id": 2,
+        "nome": "NoroesteTrans",
+        "endereco": "Rua Kurupí",
+        "telefone": 44932131312,
+        "email": "noroeste@gmail.com",
         "sitio": "sim"
       }
     ]
