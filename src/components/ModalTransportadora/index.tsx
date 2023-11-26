@@ -6,8 +6,8 @@ import { Loader } from '../Loader';
 
 
 interface PropsModal {
-  modalVisible: boolean;
-  fecharModal: () => void;
+  modalVisibleT: boolean;
+  fecharModalT: () => void;
 }
 
 export function ModalTransportadora(props: PropsModal) {
@@ -27,7 +27,7 @@ export function ModalTransportadora(props: PropsModal) {
     setEndereco('')
     setTelefone('')
     setSitio('')
-    props.fecharModal()
+    props.fecharModalT()
   }
 
   function criarTransportadora(event: FormEvent) {
@@ -47,7 +47,7 @@ export function ModalTransportadora(props: PropsModal) {
   }
 
   return (
-    <Modal isOpen={props.modalVisible}
+    <Modal isOpen={props.modalVisibleT}
       overlayClassName="react-modal-overlay"
       className="react-modal-content">
       <button
@@ -59,7 +59,7 @@ export function ModalTransportadora(props: PropsModal) {
       </button>
 
       <FormContainer onSubmit={criarTransportadora}>
-        <h2>Cadastrar Tarefa</h2>
+        <h2>Cadastrar Transportadora</h2>
         <input
           type="text"
           placeholder='Nome:'

@@ -2,6 +2,7 @@ import { Container } from "./style"
 
 interface PropsHeader {
   abrirModalTrans: () => void;
+  abrirModalRotas: () => void;
 }
 export const Header = (props: PropsHeader) => {
   return (
@@ -22,12 +23,29 @@ export const Header = (props: PropsHeader) => {
                   <a className="nav-link active" aria-current="page" href="/rota">Rotas</a>
                 </li>
               </ul>
-              <button
+              {/* <button
                 type="button"
                 className="btn-add-trans"
                 onClick={props.abrirModalTrans}>
                 Cadastrar Transportadora
-              </button>
+              </button> */}
+              <div className="btn-group dropstart">
+                <button type="button" className="btn btn-secondary dropdown-toggle btn-add-trans" data-bs-toggle="dropdown" aria-expanded="false">
+                  Cadastrar
+                </button>
+                <ul className="dropdown-menu">
+                  <li className="item"><a
+                    type="button"
+                    onClick={props.abrirModalTrans}>
+                    Transportadora
+                  </a></li>
+                  <li className="item"><a
+                    type="button"
+                    onClick={props.abrirModalRotas}>
+                    Rotas
+                  </a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>

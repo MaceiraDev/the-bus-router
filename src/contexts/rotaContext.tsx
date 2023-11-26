@@ -4,7 +4,10 @@ import { IRotas } from "../interfaces/interfaces";
 
 interface PropsRotaContext {
   rotas: Array<IRotas>
+  newRota: (rotas: IRotas) => Promise<void>;
+  deleteRota: (rotas: IRotas) => Promise<void>
 }
+
 export const RotaContext = createContext(
   {} as PropsRotaContext
 )
@@ -27,9 +30,32 @@ export function RotaProvider({ children }: PropsrotaProvider) {
     fetchData();
   }, []);
 
+
+  async function newRota(data: IRotas) {
+    const resposta = await axios.post('http://localhost:3000/rotas', data)
+    axios.get('http://localhost:3000/rotas')
+      .then((res) => {
+        const data = res.data
+        setRotas(data)
+      })
+  }
+
+  async function deleteRota(data: IRotas) {
+    await axios.delete('http://localhost:3000/rotas/' + data, {
+      data: data
+    })
+    axios.get('http://localhost:3000/rotas')
+      .then((res) => {
+        const data = res.data
+        setRotas(data)
+      })
+  }
+
   return (
     <RotaContext.Provider value={{
       rotas,
+      newRota,
+      deleteRota,
     }}>
       {children}
     </RotaContext.Provider>

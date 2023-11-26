@@ -55,6 +55,15 @@
       "destino": "Polo Tecnológico",
       "saida": "10:30",
       "chegada": "10:45"
+    },
+    {
+      "transportadora": "2",
+      "descricao": "Eh",
+      "localPartida": "Miguel",
+      "destino": "Rodviária Antiga",
+      "saida": "12:30",
+      "chegada": "13:00",
+      "id": 3
     }
   ],
   "transportadoras": [

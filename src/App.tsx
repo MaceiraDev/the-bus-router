@@ -10,16 +10,25 @@ import { Carrousel } from "./components/Carrousel"
 import { ModalTransportadora } from "./components/ModalTransportadora"
 import { useState } from "react"
 import { Line } from "./components/LineRouteTheBus"
+import { ModalRota } from "./components/ModalRota"
 
 function App() {
-  const [isVisibleModal, setIsVisibleModal] = useState(false)
+  const [isVisibleModalT, setIsVisibleModalT] = useState(false)
+  const [isVisibleModalR, setIsVisibleModalR] = useState(false)
 
   function abrirModalTrans() {
-    setIsVisibleModal(true)
+    setIsVisibleModalT(true)
   }
 
-  function fecharModal() {
-    setIsVisibleModal(false)
+  function fecharModalT() {
+    setIsVisibleModalT(false)
+  }
+
+  function abrirModalRotas() {
+    setIsVisibleModalR(true)
+  }
+  function fecharModalR() {
+    setIsVisibleModalR(false)
   }
 
 
@@ -27,16 +36,17 @@ function App() {
     <>
       <TransportadoraProvider>
         <RotaProvider>
-          <Header abrirModalTrans={abrirModalTrans} />
+          <Header abrirModalTrans={abrirModalTrans} abrirModalRotas={abrirModalRotas} />
           <Carrousel />
           <GloblaStyle />
           <Outlet />
           <Line />
           <Footer />
+          <ModalRota modalRVisibleR={isVisibleModalR} fecharModalR={fecharModalR} />
         </RotaProvider>
         <ModalTransportadora
-          modalVisible={isVisibleModal}
-          fecharModal={fecharModal}
+          modalVisibleT={isVisibleModalT}
+          fecharModalT={fecharModalT}
         />
       </TransportadoraProvider>
     </>

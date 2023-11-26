@@ -40,7 +40,7 @@ export const TableTrans = ({ }: ITransportadora) => {
                 <td> {transportadora.telefone} </td>
                 <td> {transportadora.email} </td>
                 <td> {transportadora.sitio} </td>
-                <td style={{ textAlign: 'center' }}> <button onClick={() => context.deletarTransportadora(transportadora.id)}
+                <td style={{ textAlign: 'center' }}> <button onClick={() => deletarTransportadora(transportadora.id)}
                   type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button> </td>
               </tr>
             )}
