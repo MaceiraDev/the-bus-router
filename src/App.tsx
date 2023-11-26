@@ -9,6 +9,7 @@ import { RotaProvider } from "./contexts/rotaContext"
 import { Carrousel } from "./components/Carrousel"
 import { ModalTransportadora } from "./components/ModalTransportadora"
 import { useState } from "react"
+import { Line } from "./components/LineRouteTheBus"
 
 function App() {
   const [isVisibleModal, setIsVisibleModal] = useState(false)
@@ -30,6 +31,7 @@ function App() {
           <Carrousel />
           <GloblaStyle />
           <Outlet />
+          <Line />
           <Footer />
         </RotaProvider>
         <ModalTransportadora

@@ -21,10 +21,7 @@ export const Header = (props: PropsHeader) => {
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="/rota">Rotas</a>
                 </li>
-
               </ul>
-            </div>
-            <div>
               <button
                 type="button"
                 className="btn-add-trans"

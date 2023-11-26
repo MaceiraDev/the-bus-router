@@ -10,7 +10,15 @@ export const Container = styled.header`
   color: var(--backgroundDois);
   font-weight: 900;
 }
+.icons{
+  display:flex;
+}
 h3{
   color: var(--backgroundDois);
+  font-weight: 900;
+}
+h4{
+  color: var(--backgroundDois);
+  font-weight: 600;
 }
 `
