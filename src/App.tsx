@@ -12,10 +12,12 @@ import { useState } from "react"
 import { Line } from "./components/LineRouteTheBus"
 import { ModalRota } from "./components/ModalRota"
 import { VeiculoProvider } from "./contexts/veiculoContext"
+import { ModalVeiculo } from "./components/ModalVeiculo"
 
 function App() {
   const [isVisibleModalT, setIsVisibleModalT] = useState(false)
   const [isVisibleModalR, setIsVisibleModalR] = useState(false)
+  const [isVisibleModalV, setIsVisibleModalV] = useState(false)
 
   function abrirModalTrans() {
     setIsVisibleModalT(true)
@@ -33,12 +35,20 @@ function App() {
   }
 
 
+  function abrirModalVeiculos() {
+    setIsVisibleModalV(true)
+  }
+  function fecharModalVeiculos() {
+    setIsVisibleModalV(false)
+  }
+
+
   return (
     <>
       <VeiculoProvider>
         <TransportadoraProvider>
           <RotaProvider>
-            <Header abrirModalTrans={abrirModalTrans} abrirModalRotas={abrirModalRotas} />
+            <Header abrirModalTrans={abrirModalTrans} abrirModalRotas={abrirModalRotas} abrirModalVeiculos={abrirModalVeiculos} />
             <Carrousel />
             <GloblaStyle />
             <Outlet />
@@ -46,11 +56,10 @@ function App() {
             <Footer />
             <ModalRota modalRVisibleR={isVisibleModalR} fecharModalR={fecharModalR} />
           </RotaProvider>
-          <ModalTransportadora
-            modalVisibleT={isVisibleModalT}
-            fecharModalT={fecharModalT}
+          <ModalTransportadora modalVisibleT={isVisibleModalT} fecharModalT={fecharModalT}
           />
         </TransportadoraProvider>
+        <ModalVeiculo modalVisibleV={isVisibleModalV} fecharModalV={fecharModalVeiculos} />
       </VeiculoProvider>
     </>
   )

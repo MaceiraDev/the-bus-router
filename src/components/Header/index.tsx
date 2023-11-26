@@ -3,6 +3,7 @@ import { Container } from "./style"
 interface PropsHeader {
   abrirModalTrans: () => void;
   abrirModalRotas: () => void;
+  abrirModalVeiculos: () => void;
 }
 export const Header = (props: PropsHeader) => {
   return (
@@ -46,6 +47,11 @@ export const Header = (props: PropsHeader) => {
                     type="button"
                     onClick={props.abrirModalRotas}>
                     Rotas
+                  </a></li>
+                  <li className="item"><a
+                    type="button"
+                    onClick={props.abrirModalVeiculos}>
+                    Veículos
                   </a></li>
                 </ul>
               </div>

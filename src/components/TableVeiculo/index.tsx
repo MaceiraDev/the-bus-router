@@ -5,7 +5,7 @@ import { VeiculoContext } from "../../contexts/veiculoContext";
 
 
 export const TableVeiculo = ({ }: IVeiculos) => {
-  const { veiculos } = useContext(VeiculoContext)
+  const { veiculos, deleteVeiculo } = useContext(VeiculoContext)
 
   const context = useContext(VeiculoContext);
 
@@ -20,7 +20,7 @@ export const TableVeiculo = ({ }: IVeiculos) => {
               <th scope="col">Descrição</th>
               <th scope="col">Placa</th>
               <th style={{ textAlign: 'center' }} scope="col">Assentos</th>
-              {/* <th style={{ textAlign: 'center' }} scope="col">Ação</th> */}
+              <th style={{ textAlign: 'center' }} scope="col">Ação</th>
             </tr>
           </thead>
           <tbody className="mid-tabela">
@@ -31,8 +31,9 @@ export const TableVeiculo = ({ }: IVeiculos) => {
                 <td> {veiculo.descricao} </td>
                 <td> {veiculo.placa} </td>
                 <td style={{ textAlign: 'center' }} > {veiculo.assento} </td>
-                {/* <td style={{ textAlign: 'center' }}> <button onClick={() => deletarTransportadora(transportadora.id)}
-                  type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button> </td> */}
+                <td style={{ textAlign: 'center' }}> <button onClick={() => deleteVeiculo(veiculo.id)}
+                  type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button>
+                </td>
               </tr>
             )}
 
