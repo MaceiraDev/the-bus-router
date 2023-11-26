@@ -1,3 +1,4 @@
+import { TableVeiculo } from "../../components/TableVeiculo"
 import { Container } from "./style"
 
 export const Veiculo = () => {
@@ -10,6 +11,7 @@ export const Veiculo = () => {
           <hr />
           <div className='row'>
             <div className='col-md-10 offset-md-1'>
+              <TableVeiculo descricao={""} placa={""} assento={""} />
             </div>
           </div>
         </div>
