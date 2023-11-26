@@ -11,6 +11,7 @@ import { ModalTransportadora } from "./components/ModalTransportadora"
 import { useState } from "react"
 import { Line } from "./components/LineRouteTheBus"
 import { ModalRota } from "./components/ModalRota"
+import { VeiculoProvider } from "./contexts/veiculoContext"
 
 function App() {
   const [isVisibleModalT, setIsVisibleModalT] = useState(false)
@@ -34,21 +35,23 @@ function App() {
 
   return (
     <>
-      <TransportadoraProvider>
-        <RotaProvider>
-          <Header abrirModalTrans={abrirModalTrans} abrirModalRotas={abrirModalRotas} />
-          <Carrousel />
-          <GloblaStyle />
-          <Outlet />
-          <Line />
-          <Footer />
-          <ModalRota modalRVisibleR={isVisibleModalR} fecharModalR={fecharModalR} />
-        </RotaProvider>
-        <ModalTransportadora
-          modalVisibleT={isVisibleModalT}
-          fecharModalT={fecharModalT}
-        />
-      </TransportadoraProvider>
+      <VeiculoProvider>
+        <TransportadoraProvider>
+          <RotaProvider>
+            <Header abrirModalTrans={abrirModalTrans} abrirModalRotas={abrirModalRotas} />
+            <Carrousel />
+            <GloblaStyle />
+            <Outlet />
+            <Line />
+            <Footer />
+            <ModalRota modalRVisibleR={isVisibleModalR} fecharModalR={fecharModalR} />
+          </RotaProvider>
+          <ModalTransportadora
+            modalVisibleT={isVisibleModalT}
+            fecharModalT={fecharModalT}
+          />
+        </TransportadoraProvider>
+      </VeiculoProvider>
     </>
   )
 }

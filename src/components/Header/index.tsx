@@ -17,10 +17,13 @@ export const Header = (props: PropsHeader) => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/transportadora">Transportadoras</a>
+                  <a className="nav-link active" aria-current="page" href="/transportadoras">Transportadoras</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/rota">Rotas</a>
+                  <a className="nav-link active" aria-current="page" href="/rotas">Rotas</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="/veiculos">Veículos</a>
                 </li>
               </ul>
               {/* <button
@@ -30,8 +33,8 @@ export const Header = (props: PropsHeader) => {
                 Cadastrar Transportadora
               </button> */}
               <div className="btn-group dropstart">
-                <button type="button" className="btn btn-secondary dropdown-toggle btn-add-trans" data-bs-toggle="dropdown" aria-expanded="false">
-                  Cadastrar
+                <button type="button" className="btn btn-secondary  btn-add-trans" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i style={{ fontSize: '12pt' }} className="bi bi-caret-left-fill"></i>  Cadastrar
                 </button>
                 <ul className="dropdown-menu">
                   <li className="item"><a

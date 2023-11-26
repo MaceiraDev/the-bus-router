@@ -17,3 +17,11 @@ export interface ITransportadora {
   email: string;
   sitio: string;
 }
+
+export interface IVeiculos {
+  id?: number;
+  rota?: string;
+  descricao: string;
+  placa: string;
+  assento: string;
+}
