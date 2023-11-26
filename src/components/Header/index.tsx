@@ -26,6 +26,9 @@ export const Header = (props: PropsHeader) => {
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="/veiculos">Veículos</a>
                 </li>
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="/usuarios">Usuários</a>
+                </li>
               </ul>
               {/* <button
                 type="button"

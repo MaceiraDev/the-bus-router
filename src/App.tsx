@@ -13,6 +13,7 @@ import { Line } from "./components/LineRouteTheBus"
 import { ModalRota } from "./components/ModalRota"
 import { VeiculoProvider } from "./contexts/veiculoContext"
 import { ModalVeiculo } from "./components/ModalVeiculo"
+import { UsuarioProvider } from "./contexts/usuarioContext"
 
 function App() {
   const [isVisibleModalT, setIsVisibleModalT] = useState(false)
@@ -45,22 +46,24 @@ function App() {
 
   return (
     <>
-      <VeiculoProvider>
-        <TransportadoraProvider>
-          <RotaProvider>
-            <Header abrirModalTrans={abrirModalTrans} abrirModalRotas={abrirModalRotas} abrirModalVeiculos={abrirModalVeiculos} />
-            <Carrousel />
-            <GloblaStyle />
-            <Outlet />
-            <Line />
-            <Footer />
-            <ModalRota modalRVisibleR={isVisibleModalR} fecharModalR={fecharModalR} />
-          </RotaProvider>
-          <ModalTransportadora modalVisibleT={isVisibleModalT} fecharModalT={fecharModalT}
-          />
-        </TransportadoraProvider>
-        <ModalVeiculo modalVisibleV={isVisibleModalV} fecharModalV={fecharModalVeiculos} />
-      </VeiculoProvider>
+      <UsuarioProvider>
+        <VeiculoProvider>
+          <TransportadoraProvider>
+            <RotaProvider>
+              <Header abrirModalTrans={abrirModalTrans} abrirModalRotas={abrirModalRotas} abrirModalVeiculos={abrirModalVeiculos} />
+              <Carrousel />
+              <GloblaStyle />
+              <Outlet />
+              <Line />
+              <Footer />
+              <ModalRota modalRVisibleR={isVisibleModalR} fecharModalR={fecharModalR} />
+            </RotaProvider>
+            <ModalTransportadora modalVisibleT={isVisibleModalT} fecharModalT={fecharModalT}
+            />
+          </TransportadoraProvider>
+          <ModalVeiculo modalVisibleV={isVisibleModalV} fecharModalV={fecharModalVeiculos} />
+        </VeiculoProvider>
+      </UsuarioProvider>
     </>
   )
 }

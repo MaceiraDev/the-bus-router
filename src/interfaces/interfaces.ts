@@ -25,3 +25,14 @@ export interface IVeiculos {
   placa: string;
   assento: string;
 }
+
+export interface IUsuarios {
+  id?: number;
+  nome: string;
+  cpf: string;
+  endereco: string;
+  email: string;
+  telefone: string;
+  login: string;
+  senha: string;
+}
