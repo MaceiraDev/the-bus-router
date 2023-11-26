@@ -1,4 +1,4 @@
-import { TableRota } from "../../components/Table-Rota"
+import { TableRota } from "../../components/Table-rota"
 import { Container } from "./style"
 
 export const Rota = () => {

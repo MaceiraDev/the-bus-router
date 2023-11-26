@@ -7,9 +7,18 @@ import { Footer } from "./components/Footer"
 import { TransportadoraProvider } from "./contexts/transportadoraContext"
 import { RotaProvider } from "./contexts/rotaContext"
 import { Carrousel } from "./components/Carrousel"
+import { useState } from "react"
 
 function App() {
+  const [isVisibleModal, setIsVisibleModal] = useState(false)
 
+  function abrirModal() {
+      setIsVisibleModal(true)
+  }
+
+  function fecharModal() {
+      setIsVisibleModal(false)
+  }
   return (
     <>
       <TransportadoraProvider>

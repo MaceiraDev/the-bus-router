@@ -1,4 +1,8 @@
 import { Container } from "./style"
+
+interface PropsHeader{
+  abrirModal: () => void
+}
 export const Header = () => {
   return (
     <>
