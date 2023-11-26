@@ -12,9 +12,8 @@ export interface ITransportadora {
   sitio: string;
 }
 
-
 export const TableTrans = ({ }: ITransportadora) => {
-  const { transportadoras } = useContext(TransportadoraContext)
+  const { transportadoras, deletarTransportadora } = useContext(TransportadoraContext)
   const context = useContext(TransportadoraContext);
 
   return (
@@ -29,6 +28,7 @@ export const TableTrans = ({ }: ITransportadora) => {
               <th scope="col">Telefone</th>
               <th scope="col">Email</th>
               <th scope="col">Sítio</th>
+              <th style={{ textAlign: 'center' }} scope="col">Ação</th>
             </tr>
           </thead>
           <tbody className="mid-tabela">
@@ -40,6 +40,8 @@ export const TableTrans = ({ }: ITransportadora) => {
                 <td> {transportadora.telefone} </td>
                 <td> {transportadora.email} </td>
                 <td> {transportadora.sitio} </td>
+                <td style={{ textAlign: 'center' }}> <button onClick={() => context.deletarTransportadora(transportadora.id)}
+                  type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button> </td>
               </tr>
             )}
 
