@@ -14,7 +14,7 @@ interface ItableProps {
 
 export const TableRota = ({ }: ItableProps) => {
 
-  const { rotas } = useContext(RotaContext)
+  const { rotas, deleteRota } = useContext(RotaContext)
   const context = useContext(RotaContext);
 
   return (
@@ -30,6 +30,8 @@ export const TableRota = ({ }: ItableProps) => {
               <th scope="col">Destino</th>
               <th scope="col">Saída</th>
               <th scope="col">Chegada</th>
+              <th style={{ textAlign: 'center' }} scope="col">Ação</th>
+
             </tr>
           </thead>
           <tbody className="mid-tabela">
@@ -42,6 +44,7 @@ export const TableRota = ({ }: ItableProps) => {
                 <td> {rota.descricao} </td>
                 <td> {rota.saida} </td>
                 <td> {rota.chegada} </td>
+                <td style={{ textAlign: 'center' }}><button onClick={() => deleteRota(rota.id)} type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button> </td>
               </tr>
             )}
           </tbody>

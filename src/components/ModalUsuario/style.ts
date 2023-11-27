@@ -23,16 +23,16 @@ input {
 }
 
 textarea {
-  width: 96%;
+  width: 100%;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #d7d7d7;
   background-color: #e7e9ee;
   font-size: 1rem;
+  margin-bottom: 10px;
   &::placeholder {
       color: var(--text-body);
   }
-  margin-top:  1rem;
   resize: none;
 }
 select {
@@ -42,7 +42,6 @@ select {
   border: 1px solid #d7d7d7;
   background-color: #e7e9ee;
   font-size: 1rem;
-  margin-top:  1rem;
 }
 
 button[type='submit'] {

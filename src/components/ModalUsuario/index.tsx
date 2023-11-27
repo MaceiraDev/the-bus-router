@@ -1,44 +1,50 @@
 import Modal from 'react-modal'
 import { FormEvent, useContext, useState } from 'react';
-import { TransportadoraContext } from '../../contexts/transportadoraContext'
 import { FormContainer } from './style';
 import { Loader } from '../Loader';
+import { UsuarioContext } from '../../contexts/usuarioContext';
 
 
 interface PropsModal {
-  modalVisibleT: boolean;
-  fecharModalT: () => void;
+  modalVisibleU: boolean;
+  fecharModalU: () => void;
 }
 
-export function ModalTransportadora(props: PropsModal) {
+export function ModalUsuario(props: PropsModal) {
 
-  const { createTransportadora } = useContext(TransportadoraContext)
+  const { createUsuario } = useContext(UsuarioContext)
 
   const [nome, setNome] = useState('')
+  const [cpf, setCpf] = useState('')
   const [endereco, setEndereco] = useState('')
-  const [telefone, setTelefone] = useState('')
   const [email, setEmail] = useState('')
-  const [sitio, setSitio] = useState('')
+  const [telefone, setTelefone] = useState('')
+  const [login, setLogin] = useState('')
+  const [senha, setSenha] = useState('')
 
 
   function limparCamposEFecharModal() {
     setNome('')
-    setEmail('')
+    setCpf('')
     setEndereco('')
+    setEmail('')
     setTelefone('')
-    setSitio('')
-    props.fecharModalT()
+    setLogin('')
+    setSenha('')
+    props.fecharModalU()
   }
 
-  function criarTransportadora(event: FormEvent) {
+  function criarUsuario(event: FormEvent) {
     event.preventDefault()
 
-    createTransportadora({
+    createUsuario({
       nome,
+      cpf,
       endereco,
-      telefone,
       email,
-      sitio,
+      telefone,
+      login,
+      senha,
       id: 0
     })
 
@@ -47,7 +53,7 @@ export function ModalTransportadora(props: PropsModal) {
   }
 
   return (
-    <Modal isOpen={props.modalVisibleT}
+    <Modal isOpen={props.modalVisibleU}
       overlayClassName="react-modal-overlay"
       className="react-modal-content">
       <button
@@ -58,8 +64,8 @@ export function ModalTransportadora(props: PropsModal) {
         X
       </button>
 
-      <FormContainer onSubmit={criarTransportadora}>
-        <h2>Cadastrar Transportadora</h2>
+      <FormContainer onSubmit={criarUsuario}>
+        <h2>Cadastrar Usuário</h2>
         <input
           type="text"
           placeholder='Nome:'
@@ -69,18 +75,17 @@ export function ModalTransportadora(props: PropsModal) {
         />
         <input
           type="text"
+          placeholder='CPF:'
+          required
+          value={cpf}
+          onChange={(event => setCpf(event.target.value))}
+        />
+        <input
+          type="text"
           placeholder='Endereço:'
           required
           value={endereco}
           onChange={(event => setEndereco(event.target.value))}
-
-        />
-        <input
-          type="text"
-          placeholder='Telefone'
-          required
-          value={telefone}
-          onChange={(event => setTelefone(event.target.value))}
         />
         <input
           type="email"
@@ -91,10 +96,24 @@ export function ModalTransportadora(props: PropsModal) {
         />
         <input
           type="text"
-          placeholder='Sítio:'
+          placeholder='Telefone:'
           required
-          value={sitio}
-          onChange={(event => setSitio(event.target.value))}
+          value={telefone}
+          onChange={(event => setTelefone(event.target.value))}
+        />
+        <input
+          type="text"
+          placeholder='Login:'
+          required
+          value={login}
+          onChange={(event => setLogin(event.target.value))}
+        />
+        <input
+          type="password"
+          placeholder='Senha:'
+          required
+          value={senha}
+          onChange={(event => setSenha(event.target.value))}
         />
         <Loader visible={false} />
         <button type='submit'>
