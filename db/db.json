@@ -1,82 +1,4 @@
 {
-<<<<<<< HEAD
-  "usuarios": {
-    "users": [
-      {
-        "id": 1,
-        "nome": "Standard User",
-        "cpf": "11122244400",
-        "endereco": "Rua: Don Pedro I N°666, Bairro: Centro",
-        "email": "user@mail.com",
-        "telefone": 4499990000,
-        "login": "user@mail.com",
-        "senha": "1234"
-      },
-      {
-        "id": 2,
-        "nome": "Orlando",
-        "cpf": "33344455500",
-        "endereco": "Rua: Fundão N°333, Bairr: Dom Bosco",
-        "email": "orlando@gmail.com",
-        "telefone": 44911112222,
-        "login": "orlando@gmail.com",
-        "senha": "peitos"
-      }
-    ]
-  },
-  "veiculos": {
-    "veiculo": [
-      {
-        "id": 1,
-        "rota": "Praça",
-        "descricao": "vai pra praça",
-        "placa": "IDW932",
-        "assento": 30
-      },
-      {
-        "id": 2,
-        "rota": "centro",
-        "descricao": "vai pro centro",
-        "placa": "AHD837",
-        "assento": 30
-      }
-    ]
-  },
-  "rotas": {
-    "rota": [
-      {
-        "id": 1,
-        "transportadora": "centro",
-        "descricao": "vai pro centro",
-        "localPartida": "agora",
-        "destino": "Centro",
-        "saida": "12:45",
-        "chegada": "13:00"
-      },
-      {
-        "id": 2,
-        "transportadora": "Praça",
-        "descricao": "vai pra praça",
-        "localPartida": "aqui",
-        "destino": "pra la",
-        "saida": "10:30",
-        "chegada": "10:45"
-      }
-    ]
-  },
-  "transportadora": {
-    "rota": [
-      {
-        "id": 1,
-        "nome": "umutrans",
-        "endereco": "rua cavalo",
-        "telefone": 44932131312,
-        "email": "umutrans@gmail.com",
-        "sitio": "sim"
-      }
-    ]
-  }
-=======
   "usuarios": [
     {
       "nome": "Jefferson Tosti",
@@ -150,7 +72,14 @@
       "email": "jair_eli@gmail.com",
       "sitio": "http://jaireli.com.br",
       "id": 2
+    },
+    {
+      "nome": "dasdsad",
+      "endereco": "asdada",
+      "telefone": "132121",
+      "email": "eads@dadsa.com",
+      "sitio": "dsadsa",
+      "id": 3
     }
   ]
->>>>>>> leonardo
 }

@@ -23,6 +23,7 @@ function App() {
   const [isVisibleModalU, setIsVisibleModalU] = useState(false)
 
   function abrirModalTrans() {
+    //console.log('Botão do modal clicado');
     setIsVisibleModalT(true)
   }
 

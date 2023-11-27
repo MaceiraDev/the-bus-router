@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable prefer-const */
 import Modal from 'react-modal'
-import { FormEvent, useContext, useState } from 'react';
+import { FormEvent, useContext, useEffect, useState } from 'react';
 import { TransportadoraContext } from '../../contexts/transportadoraContext'
 import { FormContainer } from './style';
 import { Loader } from '../Loader';
@@ -12,7 +14,7 @@ interface PropsModal {
 
 export function ModalTransportadora(props: PropsModal) {
 
-  const { createTransportadora } = useContext(TransportadoraContext)
+  const { createTransportadora, editarTransportadora, updateTransportadora } = useContext(TransportadoraContext)
 
   const [nome, setNome] = useState('')
   const [endereco, setEndereco] = useState('')
@@ -20,6 +22,19 @@ export function ModalTransportadora(props: PropsModal) {
   const [email, setEmail] = useState('')
   const [sitio, setSitio] = useState('')
 
+  useEffect(() => {
+    if (editarTransportadora.editar) {
+
+        setNome(editarTransportadora.transportadora?.nome ? editarTransportadora.transportadora.nome : '')
+        setEmail(editarTransportadora.transportadora?.email ? editarTransportadora.transportadora.email : '')
+        setEndereco(editarTransportadora.transportadora?.endereco ? editarTransportadora.transportadora.endereco : '')
+        setTelefone(editarTransportadora.transportadora?.telefone ? editarTransportadora.transportadora.telefone : '')
+        setSitio(editarTransportadora.transportadora?.sitio ? editarTransportadora.transportadora.sitio : '')
+
+    }
+    console.log('Todos')
+
+}, [editarTransportadora.editar])
 
   function limparCamposEFecharModal() {
     setNome('')
@@ -33,14 +48,30 @@ export function ModalTransportadora(props: PropsModal) {
   function criarTransportadora(event: FormEvent) {
     event.preventDefault()
 
-    createTransportadora({
-      nome,
-      endereco,
-      telefone,
-      email,
-      sitio,
-      id: 0
-    })
+
+    if (editarTransportadora.editar && editarTransportadora.transportadora) {
+      let objTransportadora = {
+        ...editarTransportadora.transportadora,
+        nome,
+        endereco,
+        telefone,
+        email,
+        sitio,
+      }
+      updateTransportadora(objTransportadora)
+
+    }else {
+      createTransportadora({
+        nome,
+        endereco,
+        telefone,
+        email,
+        sitio,
+        id: 0
+      })
+    }
+
+    
 
     limparCamposEFecharModal()
 
