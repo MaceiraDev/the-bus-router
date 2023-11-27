@@ -10,7 +10,7 @@ export const Usuario = () => {
           <h2 className='title'>USUÁRIOS</h2>
           <hr />
           <div className='row'>
-            <div className='col-md-10 offset-md-1'>
+            <div className='col-md-12'>
               <TableUsuario nome={""} cpf={""} endereco={""} email={""} telefone={""} login={""} senha={""} />
             </div>
           </div>

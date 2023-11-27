@@ -5,8 +5,8 @@ import { IUsuarios } from "../interfaces/interfaces";
 
 interface PropsVeiculoContext {
   usuarios: Array<IUsuarios>
-  // createVeiculo: (veiculos: IVeiculos) => Promise<void>;
-  // deleteVeiculo: (veiculos: IVeiculos) => Promise<void>
+  createUsuario: (usuarios: IUsuarios) => Promise<void>;
+  deleteUsuario: (usuarios: IUsuarios) => Promise<void>
 }
 export const UsuarioContext = createContext(
   {} as PropsVeiculoContext
@@ -31,33 +31,33 @@ export function UsuarioProvider({ children }: PropsusuarioProvider) {
   }, [])
 
 
-  // async function createVeiculo(data: IVeiculos) {
-  //   const resposta = await axios.post('http://localhost:3000/veiculos', data)
-  //   axios.get('http://localhost:3000/veiculos')
-  //     .then((res) => {
-  //       const data = res.data
-  //       setUsuarios(data)
-  //     })
-  // }
+  async function createUsuario(data: IUsuarios) {
+    const resposta = await axios.post('http://localhost:3000/usuarios', data)
+    axios.get('http://localhost:3000/usuarios')
+      .then((res) => {
+        const data = res.data
+        setUsuarios(data)
+      })
+  }
 
-  // async function deleteVeiculo(data: IVeiculos) {
-  //   await axios.delete('http://localhost:3000/veiculos/' + data, {
-  //     data: data
-  //   })
-  //   axios.get('http://localhost:3000/veiculos')
-  //     .then((res) => {
-  //       const data = res.data
-  //       setUsuarios(data)
-  //     })
-  // }
+  async function deleteUsuario(data: IUsuarios) {
+    await axios.delete('http://localhost:3000/usuarios/' + data, {
+      data: data
+    })
+    axios.get('http://localhost:3000/usuarios')
+      .then((res) => {
+        const data = res.data
+        setUsuarios(data)
+      })
+  }
 
 
 
   return (
     <UsuarioContext.Provider value={{
       usuarios,
-      // createVeiculo,
-      // deleteVeiculo,
+      createUsuario,
+      deleteUsuario,
     }}>
       {children}
     </UsuarioContext.Provider>

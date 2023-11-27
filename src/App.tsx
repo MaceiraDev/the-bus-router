@@ -14,11 +14,13 @@ import { ModalRota } from "./components/ModalRota"
 import { VeiculoProvider } from "./contexts/veiculoContext"
 import { ModalVeiculo } from "./components/ModalVeiculo"
 import { UsuarioProvider } from "./contexts/usuarioContext"
+import { ModalUsuario } from "./components/ModalUsuario"
 
 function App() {
   const [isVisibleModalT, setIsVisibleModalT] = useState(false)
   const [isVisibleModalR, setIsVisibleModalR] = useState(false)
   const [isVisibleModalV, setIsVisibleModalV] = useState(false)
+  const [isVisibleModalU, setIsVisibleModalU] = useState(false)
 
   function abrirModalTrans() {
     setIsVisibleModalT(true)
@@ -35,12 +37,18 @@ function App() {
     setIsVisibleModalR(false)
   }
 
-
   function abrirModalVeiculos() {
     setIsVisibleModalV(true)
   }
   function fecharModalVeiculos() {
     setIsVisibleModalV(false)
+  }
+
+  function abrirModalUsuario() {
+    setIsVisibleModalU(true)
+  }
+  function fecharModalUsuario() {
+    setIsVisibleModalU(false)
   }
 
 
@@ -50,7 +58,7 @@ function App() {
         <VeiculoProvider>
           <TransportadoraProvider>
             <RotaProvider>
-              <Header abrirModalTrans={abrirModalTrans} abrirModalRotas={abrirModalRotas} abrirModalVeiculos={abrirModalVeiculos} />
+              <Header abrirModalTrans={abrirModalTrans} abrirModalRotas={abrirModalRotas} abrirModalVeiculos={abrirModalVeiculos} abrirModalUsuarios={abrirModalUsuario} />
               <Carrousel />
               <GloblaStyle />
               <Outlet />
@@ -63,6 +71,7 @@ function App() {
           </TransportadoraProvider>
           <ModalVeiculo modalVisibleV={isVisibleModalV} fecharModalV={fecharModalVeiculos} />
         </VeiculoProvider>
+        <ModalUsuario modalVisibleU={isVisibleModalU} fecharModalU={fecharModalUsuario} />
       </UsuarioProvider>
     </>
   )

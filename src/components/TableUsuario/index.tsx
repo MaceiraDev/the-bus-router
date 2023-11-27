@@ -6,7 +6,7 @@ import { UsuarioContext } from "../../contexts/usuarioContext";
 
 
 export const TableUsuario = ({ }: IUsuarios) => {
-  const { usuarios } = useContext(UsuarioContext)
+  const { usuarios, deleteUsuario } = useContext(UsuarioContext)
   const context = useContext(UsuarioContext);
 
   return (
@@ -21,8 +21,8 @@ export const TableUsuario = ({ }: IUsuarios) => {
               <th scope="col">Endereço</th>
               <th scope="col">Email</th>
               <th scope="col">Telefone</th>
-              <th scope="col">Loginf</th>
-              {/* <th style={{ textAlign: 'center' }} scope="col">Ação</th> */}
+              <th scope="col">Login</th>
+              <th style={{ textAlign: 'center' }} scope="col">Ação</th>
             </tr>
           </thead>
           <tbody className="mid-tabela">
@@ -35,8 +35,8 @@ export const TableUsuario = ({ }: IUsuarios) => {
                 <td> {usuario.email} </td>
                 <td> {usuario.telefone} </td>
                 <td> {usuario.login} </td>
-                {/* <td style={{ textAlign: 'center' }}> <button onClick={() => deletarTransportadora(transportadora.id)}
-                  type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button> </td> */}
+                <td style={{ textAlign: 'center' }}> <button onClick={() => deleteUsuario(usuario.id)}
+                  type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button> </td>
               </tr>
             )}
           </tbody>

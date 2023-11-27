@@ -4,6 +4,7 @@ interface PropsHeader {
   abrirModalTrans: () => void;
   abrirModalRotas: () => void;
   abrirModalVeiculos: () => void;
+  abrirModalUsuarios: () => void;
 }
 export const Header = (props: PropsHeader) => {
   return (
@@ -55,6 +56,11 @@ export const Header = (props: PropsHeader) => {
                     type="button"
                     onClick={props.abrirModalVeiculos}>
                     Veículos
+                  </a></li>
+                  <li className="item"><a
+                    type="button"
+                    onClick={props.abrirModalUsuarios}>
+                    Usuários
                   </a></li>
                 </ul>
               </div>
