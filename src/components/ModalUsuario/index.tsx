@@ -1,7 +1,6 @@
 import Modal from 'react-modal'
 import { FormEvent, useContext, useState } from 'react';
 import { FormContainer } from './style';
-import { Loader } from '../Loader';
 import { UsuarioContext } from '../../contexts/usuarioContext';
 
 
@@ -115,7 +114,6 @@ export function ModalUsuario(props: PropsModal) {
           value={senha}
           onChange={(event => setSenha(event.target.value))}
         />
-        <Loader visible={false} />
         <button type='submit'>
           Cadastrar
         </button>

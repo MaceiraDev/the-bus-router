@@ -7,6 +7,8 @@ interface PropsHeader {
   abrirModalUsuarios: () => void;
 }
 export const Header = (props: PropsHeader) => {
+  // console.log(props.abrirModalTrans)
+
   return (
     <>
       <Container>
@@ -62,6 +64,7 @@ export const Header = (props: PropsHeader) => {
                     onClick={props.abrirModalUsuarios}>
                     Usuários
                   </a></li>
+                  
                 </ul>
               </div>
             </div>

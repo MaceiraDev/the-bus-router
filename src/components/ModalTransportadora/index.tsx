@@ -2,7 +2,6 @@ import Modal from 'react-modal'
 import { FormEvent, useContext, useState } from 'react';
 import { TransportadoraContext } from '../../contexts/transportadoraContext'
 import { FormContainer } from './style';
-import { Loader } from '../Loader';
 
 
 interface PropsModal {
@@ -12,7 +11,7 @@ interface PropsModal {
 
 export function ModalTransportadora(props: PropsModal) {
 
-  const { createTransportadora } = useContext(TransportadoraContext)
+  const { createTransportadora, editarTransportadora } = useContext(TransportadoraContext)
 
   const [nome, setNome] = useState('')
   const [endereco, setEndereco] = useState('')
@@ -33,14 +32,26 @@ export function ModalTransportadora(props: PropsModal) {
   function criarTransportadora(event: FormEvent) {
     event.preventDefault()
 
-    createTransportadora({
-      nome,
-      endereco,
-      telefone,
-      email,
-      sitio,
-      id: 0
-    })
+      // if (editarTransportadora.editar && editarTransportadora.transportadora) {
+      //   let objTransportadora = {
+      //     ...editarTransportadora.transportadora,
+      //     nome,
+      //     endereco,
+      //     telefone,
+      //     email,
+      //     sitio,
+      //   }
+      //   editarTransportadora(objTransportadora)
+      // } else {
+      createTransportadora({
+        nome,
+        endereco,
+        telefone,
+        email,
+        sitio,
+        id: 0
+      })
+    //}
 
     limparCamposEFecharModal()
 
@@ -96,7 +107,6 @@ export function ModalTransportadora(props: PropsModal) {
           value={sitio}
           onChange={(event => setSitio(event.target.value))}
         />
-        <Loader visible={false} />
         <button type='submit'>
           Cadastrar
         </button>

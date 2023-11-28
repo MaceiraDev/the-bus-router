@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from "axios";
 import { useEffect, ReactNode, createContext, useState } from "react";
 import { IRotas } from "../interfaces/interfaces";
+import { Loading } from "../components/Loader";
 
 interface PropsRotaContext {
   rotas: Array<IRotas>
@@ -19,6 +21,8 @@ interface PropsrotaProvider {
 export function RotaProvider({ children }: PropsrotaProvider) {
 
   const [rotas, setRotas] = useState([])
+  const [loading, setLoading] = useState<boolean>(false)
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,11 +36,13 @@ export function RotaProvider({ children }: PropsrotaProvider) {
 
 
   async function newRota(data: IRotas) {
+    setLoading(true)
     const resposta = await axios.post('http://localhost:3000/rotas', data)
     axios.get('http://localhost:3000/rotas')
       .then((res) => {
         const data = res.data
         setRotas(data)
+        setLoading(false)
       })
   }
 
@@ -57,6 +63,7 @@ export function RotaProvider({ children }: PropsrotaProvider) {
       newRota,
       deleteRota,
     }}>
+      <Loading visible={loading} />
       {children}
     </RotaContext.Provider>
   )
