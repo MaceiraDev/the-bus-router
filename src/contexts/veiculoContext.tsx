@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from "axios";
 import { useEffect, ReactNode, createContext, useState } from "react";
 import { IVeiculos } from "../interfaces/interfaces";
+import { Loading } from "../components/Loader";
 
 
 interface PropsVeiculoContext {
@@ -21,6 +23,8 @@ interface PropsveiculoProvider {
 export function VeiculoProvider({ children }: PropsveiculoProvider) {
 
   const [veiculos, setVeiculos] = useState([])
+  const [loading, setLoading] = useState<boolean>(false)
+
 
 
   useEffect(() => {
@@ -32,11 +36,13 @@ export function VeiculoProvider({ children }: PropsveiculoProvider) {
 
 
   async function createVeiculo(data: IVeiculos) {
+    setLoading(true)
     const resposta = await axios.post('http://localhost:3000/veiculos', data)
     axios.get('http://localhost:3000/veiculos')
       .then((res) => {
         const data = res.data
         setVeiculos(data)
+        setLoading(false)
       })
   }
 
@@ -59,7 +65,8 @@ export function VeiculoProvider({ children }: PropsveiculoProvider) {
       createVeiculo,
       deleteVeiculo,
     }}>
-      {children}
+      <Loading visible={loading} />
+      {children} 
     </VeiculoContext.Provider>
   )
 }

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-empty-pattern */
 import { Container } from "./style"
 import { useContext } from 'react';
 import { IUsuarios } from "../../interfaces/interfaces";

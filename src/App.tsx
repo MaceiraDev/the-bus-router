@@ -15,6 +15,8 @@ import { VeiculoProvider } from "./contexts/veiculoContext"
 import { ModalVeiculo } from "./components/ModalVeiculo"
 import { UsuarioProvider } from "./contexts/usuarioContext"
 import { ModalUsuario } from "./components/ModalUsuario"
+import { TableTrans } from "./components/TableTransportadora"
+
 
 function App() {
   const [isVisibleModalT, setIsVisibleModalT] = useState(false)
@@ -23,8 +25,8 @@ function App() {
   const [isVisibleModalU, setIsVisibleModalU] = useState(false)
 
   function abrirModalTrans() {
-    //console.log('Botão do modal clicado');
     setIsVisibleModalT(true)
+    console.log('Botão do modal clicado');
   }
 
   function fecharModalT() {
@@ -51,11 +53,11 @@ function App() {
   function fecharModalUsuario() {
     setIsVisibleModalU(false)
   }
-
+  
 
   return (
     <>
-      <UsuarioProvider>
+      <UsuarioProvider >
         <VeiculoProvider>
           <TransportadoraProvider>
             <RotaProvider>
@@ -63,12 +65,12 @@ function App() {
               <Carrousel />
               <GloblaStyle />
               <Outlet />
+              <TableTrans abrirModalTrans={abrirModalTrans} />
               <Line />
               <Footer />
               <ModalRota modalRVisibleR={isVisibleModalR} fecharModalR={fecharModalR} />
             </RotaProvider>
-            <ModalTransportadora modalVisibleT={isVisibleModalT} fecharModalT={fecharModalT}
-            />
+            <ModalTransportadora modalVisibleT={isVisibleModalT} fecharModalT={fecharModalT}/>
           </TransportadoraProvider>
           <ModalVeiculo modalVisibleV={isVisibleModalV} fecharModalV={fecharModalVeiculos} />
         </VeiculoProvider>
