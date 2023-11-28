@@ -58,28 +58,12 @@
   ],
   "transportadoras": [
     {
-      "nome": "Umutrans",
-      "endereco": "Av Paraguaios, 22",
-      "telefone": "449917889001",
-      "email": "umu_trans@gmail.com",
-      "sitio": "http://umutrans.com.pr",
-      "id": 1
-    },
-    {
       "nome": "Jairelieli",
       "endereco": "Rua dos Corvos, 20",
       "telefone": "36762188",
       "email": "jair_eli@gmail.com",
       "sitio": "http://jaireli.com.br",
       "id": 2
-    },
-    {
-      "nome": "dasdsad",
-      "endereco": "asdada",
-      "telefone": "132121",
-      "email": "eads@dadsa.com",
-      "sitio": "dsadsa",
-      "id": 3
     }
   ]
 }

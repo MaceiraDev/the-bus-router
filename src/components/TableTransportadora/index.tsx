@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-empty-pattern */
 import { Container } from "./style"
 import { useContext } from 'react';
 import { TransportadoraContext } from '../../contexts/transportadoraContext';
@@ -14,13 +12,9 @@ export interface ITransportadora {
   sitio: string;
 }
 
-interface PropsTableTransportadoras {
-  abrirModalTrans: () => void;
-}
-
-export const TableTrans = ({ }: ITransportadora, props: PropsTableTransportadoras ) => {
-  const { transportadoras, deletarTransportadora, funEditarTransportadora } = useContext(TransportadoraContext)
-  //const context = useContext(TransportadoraContext);
+export const TableTrans = ({ }: ITransportadora) => {
+  const { transportadoras, deletarTransportadora, editarTransportadora } = useContext(TransportadoraContext)
+  const context = useContext(TransportadoraContext);
 
   return (
     <>
@@ -48,9 +42,10 @@ export const TableTrans = ({ }: ITransportadora, props: PropsTableTransportadora
                 <td> {transportadora.sitio} </td>
                 <td style={{ textAlign: 'center' }}> 
                   <button onClick={() => deletarTransportadora(transportadora.id)}
-                    type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button>
-                  <button onClick={() => {funEditarTransportadora({ editar: true, transportadora  : transportadora }); props.abrirModalTrans(); }}
-                    type="button" className="btn btn-outline-primary"><i className="bi bi-pencil"></i></button>
+                  type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button>
+
+                  <button onClick={() => editarTransportadora(transportadora.id)}
+                  type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button>
                 </td>
               </tr>
             )}

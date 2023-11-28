@@ -1,7 +1,6 @@
 import Modal from 'react-modal'
 import { FormEvent, useContext, useState } from 'react';
 import { FormContainer } from './style';
-import { Loader } from '../Loader';
 import { RotaContext } from '../../contexts/rotaContext';
 
 
@@ -103,7 +102,6 @@ export function ModalRota(props: PropsModal) {
           value={chegada}
           onChange={(event => setChegada(event.target.value))}
         />
-        <Loader visible={false} />
         <button type='submit'>
           Cadastrar
         </button>
