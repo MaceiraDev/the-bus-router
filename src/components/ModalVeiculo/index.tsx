@@ -84,7 +84,11 @@ export function ModalVeiculo(props: PropsModal) {
           value={assento}
           onChange={(event => setAssento(event.target.value))}
         />
+<<<<<<< HEAD
 F        <button type='submit'>
+=======
+        <button type='submit'>
+>>>>>>> a361f10cf7ed7ae4b5cd9e4a26810bb39415954c
           Cadastrar
         </button>
       </FormContainer>

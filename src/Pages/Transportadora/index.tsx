@@ -10,7 +10,9 @@ export const Transportadora = () => {
           <hr />
           <div className='row'>
             <div className='col-md-10 offset-md-1'>
-              <TableTrans id={0} nome={''} endereco={''} telefone={0} email={''} sitio={''} />
+              <TableTrans 
+                id={0} nome={''} endereco={''} telefone={0} email={''} sitio={''}
+              />
             </div>
           </div>
         </div>

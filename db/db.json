@@ -9,23 +9,93 @@
       "login": "jefferson_caminhoes@gmail.com",
       "senha": "1234",
       "id": 1
-    }
+    },
+    {
+      "nome": "Maria Silva",
+      "cpf": "22233344455",
+      "endereco": "Rua Flores, 10",
+      "email": "maria_silva@gmail.com",
+      "telefone": "(55) 98765-4321",
+      "login": "maria_silva@gmail.com",
+      "senha": "abcd",
+      "id": 2
+   },
+   {
+    "nome": "Carlos Oliveira",
+    "cpf": "33344455566",
+    "endereco": "Avenida Central, 5",
+    "email": "carlos_oliveira@yahoo.com",
+    "telefone": "(33) 87654-3210",
+    "login": "carlos_oliveira@yahoo.com",
+    "senha": "5678",
+    "id": 3
+  },
+  {
+    "nome": "Ana Souza",
+    "cpf": "44455566677",
+    "endereco": "Travessa das Árvores, 15",
+    "email": "ana_souza@hotmail.com",
+    "telefone": "(22) 76543-2109",
+    "login": "ana_souza@hotmail.com",
+    "senha": "efgh",
+    "id": 4
+  },
+  {
+    "nome": "Lucas Santos",
+    "cpf": "55566677788",
+    "endereco": "Alameda dos Lagos, 8",
+    "email": "lucas_santos@gmail.com",
+    "telefone": "(11) 12345-6789",
+    "login": "lucas_santos@gmail.com",
+    "senha": "ijkl",
+    "id": 5
+  }
   ],
+
   "veiculos": [
     {
       "id": 1,
-      "rota": "Praça",
+      "rota": "1",
       "descricao": "vai pra praça",
       "placa": "IDW932",
       "assento": 30
     },
     {
       "id": 2,
-      "rota": "centro",
+      "rota": "3",
       "descricao": "vai pro centro",
       "placa": "AHD837",
       "assento": 30
+    },
+    {
+      "id": 3,
+      "rota": "2",
+      "descricao": "vai para o aeroporto",
+      "placa": "XYZ456",
+      "assento": 25
+    },
+    {
+      "id": 4,
+      "rota": "4",
+      "descricao": "vai para a zona industrial",
+      "placa": "LMN789",
+      "assento": 35
+    },
+    {
+      "id": 5,
+      "rota": "1",
+      "descricao": "vai para a universidade",
+      "placa": "ABC123",
+      "assento": 30
+    },
+    {
+      "id": 6,
+      "rota": "3",
+      "descricao": "vai para o shopping",
+      "placa": "QWE789",
+      "assento": 40
     }
+
   ],
   "rotas": [
     {
@@ -56,6 +126,7 @@
       "id": 3
     },
     {
+<<<<<<< HEAD
       "transportadora": "fgf",
       "descricao": "fgfgg",
       "localPartida": "fgfgffg",
@@ -72,10 +143,48 @@
       "saida": "dcdc",
       "chegada": "cdcdcdc",
       "id": 5
+=======
+      "id": 4,
+      "transportadora": 2,
+      "descricao": "Destino à Praia",
+      "localPartida": "Rua das Ondas, 5",
+      "destino": "Praia",
+      "saida": "14:00",
+      "chegada": "15:30"
+    },
+    {
+      "id": 5,
+      "transportadora": 3,
+      "descricao": "Destino ao Parque",
+      "localPartida": "Ponto Perto do Parque",
+      "destino": "Parque",
+      "saida": "11:15",
+      "chegada": "11:45"
+    },
+    {
+      "id": 6,
+      "transportadora": 1,
+      "descricao": "Destino à Montanha",
+      "localPartida": "Avenida da Montanha, 8",
+      "destino": "Montanha",
+      "saida": "09:30",
+      "chegada": "10:15"
+    },
+    {
+      "id": 7,
+      "transportadora": 2,
+      "descricao": "Destino à Cidade Velha",
+      "localPartida": "Praça Histórica, 3",
+      "destino": "Cidade Velha",
+      "saida": "16:45",
+      "chegada": "17:30"
+>>>>>>> a361f10cf7ed7ae4b5cd9e4a26810bb39415954c
     }
   ],
+
   "transportadoras": [
     {
+<<<<<<< HEAD
       "nome": "gedd",
       "endereco": "df",
       "telefone": "sdfs",
@@ -107,5 +216,55 @@
       "sitio": "fffff",
       "id": 6
     }
+=======
+      "nome": "Umutrans",
+      "endereco": "Av Paraguaios, 22",
+      "telefone": "(44) 99178-8901",
+      "email": "umu_trans@gmail.com",
+      "sitio": "http://umutrans.com.pr",
+      "id": 1
+   },
+   {
+      "nome": "Jairelieli",
+      "endereco": "Rua dos Corvos, 20",
+      "telefone": "(36) 7621-8811",
+      "email": "jair_eli@gmail.com",
+      "sitio": "http://jaireli.com.br",
+      "id": 2
+   },
+   {
+      "nome": "PRtrans",
+      "endereco": "Rua das Madeiras, 24",
+      "telefone": "(13) 2121-2111",
+      "email": "PRtrans@gmail.com",
+      "sitio": "http://prtrans.com.br",
+      "id": 3
+   },
+   {
+      "nome": "Transveloz",
+      "endereco": "Rua Veloz, 15",
+      "telefone": "(55) 4499-8877",
+      "email": "trans_veloz@gmail.com",
+      "sitio": "http://transveloz.com",
+      "id": 4
+   }, 
+   {
+      "nome": "Rapidex",
+      "endereco": "Avenida Rápida, 25",
+      "telefone": "(11) 2233-4455",
+      "email": "rapid_express@yahoo.com",
+      "sitio": "http://rapidex.com.br",
+      "id": 5
+   },  
+   {
+      "nome": "LogisCargo",
+      "endereco": "Travessa Logística, 10",
+      "telefone": "(99) 98877-6655",
+      "email": "logis_cargo@hotmail.com",
+      "sitio": "http://logiscargo.net",
+      "id": 6
+   }
+   
+>>>>>>> a361f10cf7ed7ae4b5cd9e4a26810bb39415954c
   ]
 }

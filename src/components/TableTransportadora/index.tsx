@@ -4,6 +4,7 @@ import { Container } from "./style"
 import { useContext, useState } from 'react';
 import { TransportadoraContext } from '../../contexts/transportadoraContext';
 
+<<<<<<< HEAD
 
 export interface ITransportadora {
   id: number;
@@ -21,11 +22,19 @@ interface PropsTableTransportadoras {
 
 export const TableTrans = ({ }: ITransportadora, props: PropsTableTransportadoras) => {
   const { transportadoras, deletarTransportadora, funEditarTransportadora } = useContext(TransportadoraContext)
+=======
+interface PropsTableTransportadoras {
+  abrirModalTrans: () => void;
+}
+// { }: ITransportadora,
+export const TableTrans = (props: PropsTableTransportadoras) => {
+  const { transportadoras, deletarTransportadora, editarTransportadora } = useContext(TransportadoraContext)
+  console.log(props.abrirModalTrans)
+>>>>>>> a361f10cf7ed7ae4b5cd9e4a26810bb39415954c
   //const context = useContext(TransportadoraContext);
-
   return (
     <>
-      <Container>
+      <Container >
         <table className="table table-hover">
           <thead className="top-tabela">
             <tr>
@@ -47,6 +56,7 @@ export const TableTrans = ({ }: ITransportadora, props: PropsTableTransportadora
                 <td> {transportadora.telefone} </td>
                 <td> {transportadora.email} </td>
                 <td> {transportadora.sitio} </td>
+<<<<<<< HEAD
                 <td style={{ textAlign: 'center' }}>
                   <button onClick={() => deletarTransportadora(transportadora.id)}
                     type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button>
@@ -55,6 +65,13 @@ export const TableTrans = ({ }: ITransportadora, props: PropsTableTransportadora
                     props.abrirModalTrans();
                   }}
                     type="button" className="btn btn-outline-primary"><i className="bi bi-pencil"></i></button>
+=======
+                <td style={{ textAlign: 'center' }}> 
+                  <button onClick={() => { deletarTransportadora(transportadora.id)}}
+                    type="button" className="btn btn-outline-danger"><i className="bi bi-trash"></i></button>
+                 {/*} <button onClick={() => { editarTransportadora({ editar: true, transportadora: transportadora});}}
+                    type="button" className="btn btn-outline-primary"><i className="bi bi-pencil"></i></button> */}
+>>>>>>> a361f10cf7ed7ae4b5cd9e4a26810bb39415954c
                 </td>
               </tr>
             )}

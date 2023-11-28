@@ -1,7 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable prefer-const */
 import Modal from 'react-modal'
-import { FormEvent, useContext, useEffect, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import { TransportadoraContext } from '../../contexts/transportadoraContext'
 import { FormContainer } from './style';
 
@@ -13,13 +11,14 @@ interface PropsModal {
 
 export function ModalTransportadora(props: PropsModal) {
 
-  const { createTransportadora, editarTransportadora, updateTransportadora } = useContext(TransportadoraContext)
+  const { createTransportadora, editarTransportadora } = useContext(TransportadoraContext)
 
   const [nome, setNome] = useState('')
   const [endereco, setEndereco] = useState('')
   const [telefone, setTelefone] = useState('')
   const [email, setEmail] = useState('')
   const [sitio, setSitio] = useState('')
+<<<<<<< HEAD
   const [loading, setLoading] = useState<boolean>(false)
   useEffect(() => {
     if (editarTransportadora.editar) {
@@ -34,6 +33,9 @@ export function ModalTransportadora(props: PropsModal) {
     console.log('Todos')
 
   }, [editarTransportadora.editar])
+=======
+
+>>>>>>> a361f10cf7ed7ae4b5cd9e4a26810bb39415954c
 
   function limparCamposEFecharModal() {
     setNome('')
@@ -47,6 +49,7 @@ export function ModalTransportadora(props: PropsModal) {
   function criarTransportadora(event: FormEvent) {
     event.preventDefault()
 
+<<<<<<< HEAD
 
     if (editarTransportadora.editar && editarTransportadora.transportadora) {
       let objTransportadora = {
@@ -61,6 +64,19 @@ export function ModalTransportadora(props: PropsModal) {
 
     } else {
       setLoading(true)
+=======
+      // if (editarTransportadora.editar && editarTransportadora.transportadora) {
+      //   let objTransportadora = {
+      //     ...editarTransportadora.transportadora,
+      //     nome,
+      //     endereco,
+      //     telefone,
+      //     email,
+      //     sitio,
+      //   }
+      //   editarTransportadora(objTransportadora)
+      // } else {
+>>>>>>> a361f10cf7ed7ae4b5cd9e4a26810bb39415954c
       createTransportadora({
         nome,
         endereco,
@@ -70,10 +86,14 @@ export function ModalTransportadora(props: PropsModal) {
         id: 0,
 
       })
+<<<<<<< HEAD
       setLoading(false)
     }
 
 
+=======
+    //}
+>>>>>>> a361f10cf7ed7ae4b5cd9e4a26810bb39415954c
 
     limparCamposEFecharModal()
 
