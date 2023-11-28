@@ -17,7 +17,6 @@ export const VeiculoContext = createContext(
 
 interface PropsveiculoProvider {
   children: ReactNode
-
 }
 
 export function VeiculoProvider({ children }: PropsveiculoProvider) {
