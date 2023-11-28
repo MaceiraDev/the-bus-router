@@ -4,7 +4,6 @@ import Modal from 'react-modal'
 import { FormEvent, useContext, useEffect, useState } from 'react';
 import { TransportadoraContext } from '../../contexts/transportadoraContext'
 import { FormContainer } from './style';
-import { Loader } from '../Loader';
 
 
 interface PropsModal {
@@ -21,20 +20,20 @@ export function ModalTransportadora(props: PropsModal) {
   const [telefone, setTelefone] = useState('')
   const [email, setEmail] = useState('')
   const [sitio, setSitio] = useState('')
-
+  const [loading, setLoading] = useState<boolean>(false)
   useEffect(() => {
     if (editarTransportadora.editar) {
 
-        setNome(editarTransportadora.transportadora?.nome ? editarTransportadora.transportadora.nome : '')
-        setEmail(editarTransportadora.transportadora?.email ? editarTransportadora.transportadora.email : '')
-        setEndereco(editarTransportadora.transportadora?.endereco ? editarTransportadora.transportadora.endereco : '')
-        setTelefone(editarTransportadora.transportadora?.telefone ? editarTransportadora.transportadora.telefone : '')
-        setSitio(editarTransportadora.transportadora?.sitio ? editarTransportadora.transportadora.sitio : '')
+      setNome(editarTransportadora.transportadora?.nome ? editarTransportadora.transportadora.nome : '')
+      setEmail(editarTransportadora.transportadora?.email ? editarTransportadora.transportadora.email : '')
+      setEndereco(editarTransportadora.transportadora?.endereco ? editarTransportadora.transportadora.endereco : '')
+      setTelefone(editarTransportadora.transportadora?.telefone ? editarTransportadora.transportadora.telefone : '')
+      setSitio(editarTransportadora.transportadora?.sitio ? editarTransportadora.transportadora.sitio : '')
 
     }
     console.log('Todos')
 
-}, [editarTransportadora.editar])
+  }, [editarTransportadora.editar])
 
   function limparCamposEFecharModal() {
     setNome('')
@@ -60,18 +59,21 @@ export function ModalTransportadora(props: PropsModal) {
       }
       updateTransportadora(objTransportadora)
 
-    }else {
+    } else {
+      setLoading(true)
       createTransportadora({
         nome,
         endereco,
         telefone,
         email,
         sitio,
-        id: 0
+        id: 0,
+
       })
+      setLoading(false)
     }
 
-    
+
 
     limparCamposEFecharModal()
 
@@ -127,8 +129,8 @@ export function ModalTransportadora(props: PropsModal) {
           value={sitio}
           onChange={(event => setSitio(event.target.value))}
         />
-        <Loader visible={false} />
         <button type='submit'>
+
           Cadastrar
         </button>
       </FormContainer>

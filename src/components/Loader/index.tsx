@@ -1,23 +1,19 @@
-import { LoaderStyle } from "./style";
+
+import { LoadingStyle } from "./style";
 
 interface LoadingProps {
-  visible?: boolean;
+    visible?: boolean;
 }
 
-export const Loader = ({ visible = false }: LoadingProps) => {
-  return (
-    <>
-      {
-        visible &&
-        <LoaderStyle>
-          <div className="loader">
-            <div className="box"></div>
-            <div className="box"></div>
-            <div className="box"></div>
-            <div className="box"></div>
-          </div>
-        </LoaderStyle>
-      }
-    </>
-  )
+
+export const Loading = ({ visible = false }: LoadingProps) => {
+    return (
+        <>
+            {
+                visible &&
+                <LoadingStyle />
+
+            }
+        </>
+    )
 }

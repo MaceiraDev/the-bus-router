@@ -2,16 +2,7 @@
 import axios from "axios";
 import { useEffect, ReactNode, createContext, useState } from "react";
 import { ITransportadora } from "../interfaces/interfaces";
-
-
-
-interface Transportadoras {
-  nome: string;
-  endereco: string;
-  telefone: string;
-  email: string;
-  sitio: string;
-}
+import { Loading } from "../components/Loader";
 
 interface TransportadorasWithID {
   id: string;
@@ -49,7 +40,8 @@ interface PropstransportadoraProvider {
 export function TransportadoraProvider({ children }: PropstransportadoraProvider) {
 
   const [transportadoras, setTransportadoras] = useState([])
-  const [editarTransportadora, setEditarTransportadoras] = useState<DataEditarTransportadora>({editar: false, transportadora: null}) //
+  const [editarTransportadora, setEditarTransportadoras] = useState<DataEditarTransportadora>({ editar: false, transportadora: null }) //
+  const [loading, setLoading] = useState<boolean>(false)
 
 
 
@@ -63,11 +55,13 @@ export function TransportadoraProvider({ children }: PropstransportadoraProvider
 
 
   async function createTransportadora(data: ITransportadora) {
+    setLoading(true)
     const resposta = await axios.post('http://localhost:3000/transportadoras', data)
     axios.get('http://localhost:3000/transportadoras')
       .then((res) => {
         const data = res.data
         setTransportadoras(data)
+        setLoading(false)
       })
   }
 
@@ -85,17 +79,17 @@ export function TransportadoraProvider({ children }: PropstransportadoraProvider
   async function updateTransportadora(data: TransportadorasWithID) {  //
     await axios.put('http://localhost:3000/transportadoras/' + data)  //
     axios.get('http://localhost:3000/transportadoras/') //
-    .then((res) => { //
+      .then((res) => { //
         setTransportadoras(res.data.transportadoras) //
-    }) //
+      }) //
   } //
 
   function funSetTransportadoraDefault() {  //
-    setEditarTransportadoras({editar: false, transportadora: null}) //
+    setEditarTransportadoras({ editar: false, transportadora: null }) //
   } //
 
   function funEditarTransportadora(data: DataEditarTransportadora) {  //
-      setEditarTransportadoras(data)  //
+    setEditarTransportadoras(data)  //
   } //
 
   return (
@@ -108,6 +102,7 @@ export function TransportadoraProvider({ children }: PropstransportadoraProvider
       updateTransportadora,
       deletarTransportadora,
     }}>
+      <Loading visible={loading} />
       {children}
     </TransportadoraContext.Provider>
   )

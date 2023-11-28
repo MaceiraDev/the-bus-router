@@ -1,7 +1,6 @@
 import Modal from 'react-modal'
 import { FormEvent, useContext, useState } from 'react';
 import { FormContainer } from './style';
-import { Loader } from '../Loader';
 import { VeiculoContext } from '../../contexts/veiculoContext';
 
 
@@ -85,8 +84,7 @@ export function ModalVeiculo(props: PropsModal) {
           value={assento}
           onChange={(event => setAssento(event.target.value))}
         />
-        <Loader visible={false} />
-        <button type='submit'>
+F        <button type='submit'>
           Cadastrar
         </button>
       </FormContainer>
