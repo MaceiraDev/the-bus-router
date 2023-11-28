@@ -5,12 +5,17 @@ import { Transportadora } from "../Pages/Transportadora";
 import { Rota } from "../Pages/Rota";
 import { Veiculo } from "../Pages/Veiculo";
 import { Usuario } from "../Pages/Usuario";
+import { Home } from "../Pages/Home";
 
 export const AppRoutes = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
+      {
+        path: '/',
+        element: <Home />
+      },
       {
         path: '/transportadoras',
         element: <Transportadora />

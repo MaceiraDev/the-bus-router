@@ -7,14 +7,12 @@ interface PropsHeader {
   abrirModalUsuarios: () => void;
 }
 export const Header = (props: PropsHeader) => {
-  // console.log(props.abrirModalTrans)
-
   return (
     <>
       <Container>
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
-            <span className="navbar-brand"><i className="bi bi-bus-front"></i></span>
+            <a href="/" className="navbar-brand"><i className="bi bi-bus-front"></i></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
